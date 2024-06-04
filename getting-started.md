@@ -2,35 +2,38 @@
 layout: doc
 ---
 
+
 # Getting Started
 
-This guide will help you to get started with highlayer and build your first dApp. 
+This guide will help you to get started with Highlayer and build your first dApp. 
 
-It focuses on development on testnet, since you can get $tHI (testnet HI) for free in our faucet, and test out your application without any financial risk.
+It focuses on development on the testnet, as you can obtain $tHI (testnet $HI) for free from our faucet and test your application without any financial risk.
 
 ## Wallets
 
-Any bitcoin wallet can be used to sign highlayer transactions, as we use [BIP322](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki) as signature method.
+Any bitcoin wallet can be used to sign Highlayer transactions, as we use [BIP322](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki) as the signature method.
 
-Please note that not all bitcoin wallets are able to properly render highlayer transaction data (no amount, receiver, requested fee, contract id, action name, etc).
+Please note that not all Bitcoin wallets can properly render Highlayer transaction data (e.g., amount, receiver, requested fee, contract id, action name, etc.).
 
-For testnet release of highlayer, we use bitcoin testnet addresses, so make sure that your wallet supports bitcoin testnet.
+For the testnet release of Highlayer, we use Bitcoin's testnet addresses, so make sure that your wallet supports Bitcoin's testnet.
 
-This guide will be using [Unisat](https://unisat.io/) when wallet interaction is needed.
+This guide will use [Unisat](https://unisat.io/) for any wallet interactions.
 
-We recommend creating clean wallet (with no btc or any other value on it)
+```diff
+- We recommend creating a new wallet without any BTC or any other form of values on it.
+```
 
 ## Getting $tHI
 
-To get some tBTC, get a highlayer (or bitcoin) wallet, and post your address in #faucet channel in our [discord server](https://discord.gg/skTbBz8H6S).
+To get some tBTC, obtain a Highlayer (or Bitcoin) wallet, and post your address in #faucet channel on our [discord server](https://discord.gg/skTbBz8H6S).
 
 ## Extracting WIF private key
 
-For the library to be able to deploy/interact with highlayer from node.js, you will need to get WIF key from your wallet.
+For the library to deploy or interact with Highlayer from Node.js, you will need to obtain a WIF key from your wallet.
 
-For Unisat, here's series of screenshots that will help you extract WIF. 
+For Unisat, here is a series of screenshots that will help you extract the WIF key.
 
-> <span style="color:red">IMPORTANT:</span> Never extract and use WIF of high-value wallet. WIF allows full access to your wallet, meaning if it's compromised, it will lead to loss of all funds on the wallet. Always use temporary low-value wallet that you are not afraid to lose for development purposes.
+> <span style="color:red">IMPORTANT:</span> Never extract and use the WIF of a high-value wallet. The WIF provides full access to your wallet, meaning if it gets compromised, you could lose all funds in the wallet. Always use a temporary, low-value wallet for development purposes.
 
 ![Extracting WIF from unisat](extracting-wif-1.png)
 
@@ -40,4 +43,4 @@ For Unisat, here's series of screenshots that will help you extract WIF.
 
 ## Next steps
 
-After you have wallet, tHI on it, and WIF of it extracted and saved, you can proceed to [Writing your first dApp: Cat rating app](guide/cat-app)
+After you have your wallet set up, obtained some tHI in it, and extracted and saved the WIF, you can proceed to [Writing your first dApp: Cat rating app](guide/cat-app)
