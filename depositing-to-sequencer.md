@@ -11,7 +11,7 @@ If network hits borders of internet bandwitdth (measured by mb/s processed by se
 
 Please note that sequencer may set arbitrary pricing, but if it's unreasonably high, you may still submit transaction through bitcoin network, paying bitcoin's pricing per byte of data on which sequencer has no influence.
 
-You can query sequencer's prices per byte of data in transaction via [sequencer HTTP api](/http-api.md#fetch-pricing-per-byte)
+You can query sequencer's prices per byte of data in transaction via [sequencer HTTP API](/http-api.md#fetch-pricing-per-byte)
 
 ## Making a deposit
 
