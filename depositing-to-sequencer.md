@@ -19,10 +19,7 @@ To make a deposit, make a transaction with only 1 action - [sequencerDeposit](/s
 
 Highlayer JS SDK has javascript example of building transaction that deposits to sequencer - [Sequencer Deposit](/highlayer-sdk/transactions.md#sequencer-deposit)
 
-
 ```js
-
-
 const SigningClient = new highlayer.SigningHighlayerClient({
     // Signing client params, see Highlayer SDK - Usage for details
 });
