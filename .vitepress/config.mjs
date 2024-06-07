@@ -5,9 +5,10 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://docs.highlayer.io'
   },
-  
+  lastUpdated: true,
   title: "Highlayer Docs",
   description: "Documentation and guides for developing on highlayer - JavaScript platform for web3 development.",
+  appearance:"force-dark",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -15,7 +16,9 @@ export default defineConfig({
       { text: 'Discord community', link: 'https://discord.gg/skTbBz8H6S' },
       { text: 'What is Highlayer', link: '/what-is-highlayer' },
     ],
-
+    search: {
+      provider: 'local'
+    },
     sidebar: generateSidebar({excludeFilesByFrontmatterFieldName:"exclude", underscoreToSpace:true,capitalizeFirst:true, hyphenToSpace:true, capitalizeEachWords:true}),
 
     socialLinks: [

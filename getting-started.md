@@ -19,9 +19,8 @@ For the testnet release of Highlayer, we use Bitcoin's testnet addresses, so mak
 
 This guide will use [Unisat](https://unisat.io/) for any wallet interactions.
 
-```diff
-- We recommend creating a new wallet without any BTC or any other form of values on it.
-```
+> We recommend creating a new wallet without any BTC or any other form of values on it.
+
 
 ## Getting $tHI
 
