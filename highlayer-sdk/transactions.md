@@ -9,7 +9,7 @@ Sequencer deposit is used as a measure to stop sequencer attacks, or spam TXs.
 ```js
 const transaction = new highlayer.TransactionBuilder()
 	.setAddress('ADDRESS') // Your address
-	.addActions([Actions.sequencerDeposit({ amount: '1000000' })]); // Denominuated into 12. 1 $HI being "1000000000000"
+	.addActions([Actions.sequencerDeposit({ amount: '1000000' })]); // Amount in Alans
 ```
 
 ## Transfer

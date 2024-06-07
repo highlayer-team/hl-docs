@@ -46,3 +46,9 @@ Required headers:
 | Content-Type    | text/plain       |
 
 Body must be [Transaction](/common-data-types#transaction) in encoded form (base58 msgpack).
+
+### Fetch pricing per byte
+
+`GET` `/sequencer-prices`
+
+Fetches price that sequencer will charge per byte of uploaded transaction.
