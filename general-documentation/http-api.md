@@ -17,7 +17,7 @@ This section describes endpoints exposed by highlayer sequencer. You can find se
 
 Sequencer assigns unique number to each transaction it processes in incremental order (if index 2 exists, index 1 must exist too).
 
-<Badge type="info" text="Returns" /> [Transaction](/general-documentation/common-data-types#transaction)
+<Badge type="info" text="Returns" /> [Transaction](/general-documentation/common-data-types.md#transaction)
 
 
 ### Fetch available deposit on sequencer
@@ -28,7 +28,7 @@ Fetch current balance on highlayer sequencer.
 
 Useful when needed to estimate if current deposit is enough for transaction to be accepted by sequencer.
 
-<Badge type="info" text="Returns" />  [Alans](/common-data-types#alan)
+<Badge type="info" text="Returns" />  [Alans](/general-documentation/common-data-types#alan)
 
 See [Depositing to sequencer](/general-documentation/depositing-to-sequencer.md) for more details.
 
