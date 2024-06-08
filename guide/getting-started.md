@@ -34,11 +34,11 @@ For Unisat, here is a series of screenshots that will help you extract the WIF k
 
 > <span style="color:red">IMPORTANT:</span> Never extract and use the WIF of a high-value wallet. The WIF provides full access to your wallet, meaning if it gets compromised, you could lose all funds in the wallet. Always use a temporary, low-value wallet for development purposes.
 
-![Extracting WIF from unisat](extracting-wif-1.png)
+![Extracting WIF from unisat](/assets/extracting-wif-1.png)
 
-![Extracting WIF from unisat](extracting-wif-2.png)
+![Extracting WIF from unisat](/assets/extracting-wif-2.png)
 
-![Extracting WIF from unisat](extracting-wif-3.png)
+![Extracting WIF from unisat](/assets/extracting-wif-3.png)
 
 ## Next steps
 
