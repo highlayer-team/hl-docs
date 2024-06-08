@@ -8,7 +8,7 @@ This document provides overview of exposed HTTP endpoints, also acting as a refe
 
 ## Sequencer API
 
-This section describes endpoints exposed by highlayer sequencer. You can find sequencer endpoint in [magic values](/magic-values).
+This section describes endpoints exposed by highlayer sequencer. You can find sequencer endpoint in [magic values](/general-documentation/magic-values).
 
 
 ### Fetch transaction by sequencer transaction index
@@ -17,7 +17,7 @@ This section describes endpoints exposed by highlayer sequencer. You can find se
 
 Sequencer assigns unique number to each transaction it processes in incremental order (if index 2 exists, index 1 must exist too).
 
-<Badge type="info" text="Returns" /> [Transaction](/common-data-types#transaction)
+<Badge type="info" text="Returns" /> [Transaction](/general-documentation/common-data-types#transaction)
 
 
 ### Fetch available deposit on sequencer
@@ -30,7 +30,7 @@ Useful when needed to estimate if current deposit is enough for transaction to b
 
 <Badge type="info" text="Returns" />  [Alans](/common-data-types#alan)
 
-See [Depositing to sequencer](/depositing-to-sequencer) for more details.
+See [Depositing to sequencer](/general-documentation/depositing-to-sequencer.md) for more details.
 
 
 ### Post transaction to highlayer
@@ -45,7 +45,7 @@ Required headers:
 |-----------------|------------------|
 | Content-Type    | text/plain       |
 
-Body must be [Transaction](/common-data-types#transaction) in encoded form (base58 msgpack).
+Body must be [Transaction](/general-documentation/common-data-types#transaction) in encoded form (base58 msgpack).
 
 ### Fetch pricing per byte
 

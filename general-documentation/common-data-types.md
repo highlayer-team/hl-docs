@@ -12,7 +12,7 @@ An alan represents 1/1,000,000,000,000 (10<sup>-12</sup>) of $HI and $tHI (testn
 
 Alans are usually represented as a string of digits ("100000000000000"). It is strongly recommended to use arbitrary-precision math libraries, such as [big.js](https://github.com/MikeMcl/big.js) or [mpmath](https://mpmath.org/), for operations involving alans.
 
-![Alan Alan Steve!](/alan.gif)
+![Alan Alan Steve!](/assets/alan.gif)
 
 ## Transaction
 
@@ -28,7 +28,7 @@ Transactions on Highlayer are objects encoded using msgpack+base58, with the fol
 | sequencerTxIndex   | Number                   | A unique number assigned to a transaction by the sequencer, identifying its position in the global ledger before the addition of transactions submitted to Highlayer via Bitcoin.                                                                              |
 | trueTxIndex        | Number                   | A number assigned to a transaction after processing transactions submitted via Bitcoin, available only in responses from the Highlayerd node.                                                                                                                  |
 | parentBundleHash   | String (base58)          | Blake2 hash of the previous bundle that will serve as the parent for the current bundle (the bundle in which the transaction is included).                                                                                                                     |
-| sequencerSignature | String (base58)          | Base58-encoded Ed25519 sequencer signature of the transaction, with the fields `trueTxIndex` and `sequencerSignature` set to `null`. This can be verified against the Ed25519 public key listed in the [Magic Values](/magic-values) section.                  |   
+| sequencerSignature | String (base58)          | Base58-encoded Ed25519 sequencer signature of the transaction, with the fields `trueTxIndex` and `sequencerSignature` set to `null`. This can be verified against the Ed25519 public key listed in the [Magic Values](/general-documentation/magic-values) section.                  |   
 
 ## Action
 
@@ -42,6 +42,6 @@ Fields of each individual action are as follows:
 
 | **Field** | **Format**       | **Description**                                                                                                                                                                                                                                                      |
 |-----------|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| action    | String           | The name of the action. If the program is a system, refer to the [List of System Actions](/system-actions). If the program is a contract, the action gets passed to the contract, which then determines how to handle it. Typically, it is used to identify which function to call within the contract. |
-| program   | String           | Either `system` or `contract ID`. If set to `system`, the action must correspond to one of the [system actions](/system-actions).                                                                                                                                                     |
+| action    | String           | The name of the action. If the program is a system, refer to the [List of System Actions](/general-documentation/system-actions). If the program is a contract, the action gets passed to the contract, which then determines how to handle it. Typically, it is used to identify which function to call within the contract. |
+| program   | String           | Either `system` or `contract ID`. If set to `system`, the action must correspond to one of the [system actions](/general-documentation/system-actions).                                                                                                                                                     |
 | params    | Object           | Arbitrary inputs, consisting of any keys or values, are passed to the program (either a contract or system).                                                                                                                                                          |

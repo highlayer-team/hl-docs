@@ -42,4 +42,4 @@ For Unisat, here is a series of screenshots that will help you extract the WIF k
 
 ## Next steps
 
-After you have your wallet set up, obtained some tHI in it, and extracted and saved the WIF, you can proceed to [Writing your first dApp: Cat rating app](guide/cat-app)
+After you have your wallet set up, obtained some tHI in it, and extracted and saved the WIF, you can proceed to [Writing your first dApp: Cat rating app](/guide/cat-app)

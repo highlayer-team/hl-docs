@@ -11,11 +11,11 @@ If network hits borders of internet bandwitdth (measured by mb/s processed by se
 
 Please note that sequencer may set arbitrary pricing, but if it's unreasonably high, you may still submit transaction through bitcoin network, paying bitcoin's pricing per byte of data on which sequencer has no influence.
 
-You can query sequencer's prices per byte of data in transaction via [sequencer HTTP API](/http-api.md#fetch-pricing-per-byte)
+You can query sequencer's prices per byte of data in transaction via [sequencer HTTP API](/general-documentation/http-api.md#fetch-pricing-per-byte)
 
 ## Making a deposit
 
-To make a deposit, make a transaction with only 1 action - [sequencerDeposit](/system-actions.md#sequencerdeposit). Do not include `allocateGas` with it - `sequencerDeposit` is free.
+To make a deposit, make a transaction with only 1 action - [sequencerDeposit](/general-documentation/system-actions.md#sequencerdeposit). Do not include `allocateGas` with it - `sequencerDeposit` is free.
 
 Highlayer JS SDK has javascript example of building transaction that deposits to sequencer - [Sequencer Deposit](/highlayer-sdk/transactions.md#sequencer-deposit)
 
@@ -41,7 +41,7 @@ No, sequencer fee is only "gate" fee.
 
 Paying to sequencer will make sure that your transaction is positioned by sequencer and broadcasted to network's nodes, however for nodes to process your transaction, you must also pay processing fee (gas allocation fee).
 
-Gas allocation fee is paid per transaction (without need for deposit) using the [allocateGas](/system-actions.md#allocategas) system action.
+Gas allocation fee is paid per transaction (without need for deposit) using the [allocateGas](/general-documentation/system-actions.md#allocategas) system action.
 
 ### Why are deposits needed? 
 
@@ -55,6 +55,6 @@ Sequencer deposits allow to separate inclusion from execution, as sequnecer can 
 
 ### Is there any transaction that does not need sequencer deposit nor gas fee?
 
-Yes, a transaction that includes only one single action - [sequencerDeposit](/system-actions.md#sequencerdeposit) is free.
+Yes, a transaction that includes only one single action - [sequencerDeposit](/general-documentation/system-actions.md#sequencerdeposit) is free.
 
 This way allows to deposit tokens to sequencer without previously depositing tokens to sequencer.
