@@ -8,7 +8,7 @@ Highlayerd is a daemon node for Highlayer, the fast, low-cost and easy framework
 
 A highlayerd node executes transactions from the Highlayer network, ensures the permanent storage of transactions, and serves smart contract states, acting as a gateway to Highlayer for dApps."
 
-This guide is intended for installing the testnet node, as the mainnet has not been released yet as of today.
+This guide is intended for installing the testnet node, as the mainnet has not yet been released.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ The minimum requirements are:
 
 Note: Hardware requirements may change as the testnet evolves. Initially, the requirements might be lower; however, the specifications above should remain relevant for a significant amount of time.
 
-Highlayerd is being developed and tested on Debian, but it should work fine on any Linux distribution."
+Highlayerd is being developed and tested on Debian, but it should work fine on any Linux distribution.
 
 Windows, macOS, and FreeBSD are not supported and will never be due to the use of Linux-exclusive libraries.
 
