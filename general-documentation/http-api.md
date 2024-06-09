@@ -8,14 +8,14 @@ This document provides overview of exposed HTTP endpoints, also acting as a refe
 
 ## Sequencer API
 
-This section describes endpoints exposed by highlayer sequencer. You can find sequencer endpoint in [magic values](/general-documentation/magic-values).
+This section describes endpoints exposed by the highlayer sequencer. You can find sequencer endpoint in [magic values](/general-documentation/magic-values).
 
 
 ### Fetch transaction by sequencer transaction index
 
 `GET` `/ledger/:sequencerTxIndex`
 
-Sequencer assigns unique number to each transaction it processes in incremental order (if index 2 exists, index 1 must exist too).
+The sequencer assigns a unique number to each transaction it processes in incremental order (if index 2 exists, index 1 must exist too).
 
 <Badge type="info" text="Returns" /> [Transaction](/general-documentation/common-data-types.md#transaction)
 
@@ -26,7 +26,7 @@ Sequencer assigns unique number to each transaction it processes in incremental 
 
 Fetch current balance on highlayer sequencer. 
 
-Useful when needed to estimate if current deposit is enough for transaction to be accepted by sequencer.
+It is useful when needed to estimate if a current deposit is enough for the transaction to be accepted by the sequencer.
 
 <Badge type="info" text="Returns" />  [Alans](/general-documentation/common-data-types#alan)
 
@@ -51,4 +51,4 @@ Body must be [Transaction](/general-documentation/common-data-types#transaction)
 
 `GET` `/sequencer-prices`
 
-Fetches price that sequencer will charge per byte of uploaded transaction.
+Fetches the price that the sequencer will charge per byte of uploaded transaction.
