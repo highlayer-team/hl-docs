@@ -22,8 +22,8 @@ Transactions on Highlayer are objects encoded using msgpack+base58, with the fol
 |--------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | address            | String (Bitcoin address) | Address of the transaction signer. This can be any valid Bitcoin address supported by BIP-322, encoded in bech32, legacy, or other valid Bitcoin address representations.                                                                                      |
 | signature          | String (base64)          | Base64-encoded BIP322 (or BIP137) signature of the extracted/serialized transaction. The fields `signature`, `bundlePosition`, `sequencerTxIndex`, `trueTxIndex`, `parentBundleHash`, and `sequencerSignature` should all be set to `null`.                    |
-| nonce              | Number                   | A number used once to alter the hash of a transaction prototype without changing any other fields. This allows, for example, the sending of the same amount to the same address more than once. It does NOT apply globally to an account and can be safely reused in different transactions. |
-| actions            | List([Action](#action))  | Actions that the HVM should execute. For security reasons, 'buy gas' actions must precede all other actions.                                                                                                                                                   |
+| nonce              | Number                   | A number used once to alter the hash of a transaction prototype without changing any other fields. This allows, for example, the sending of the same amount of coins to the same address more than once. It does NOT apply globally to an account and can be safely reused in different transactions. |
+| actions            | List([Action](#action))  | Actions that the HVM should execute. For security reasons, 'allocate gas' actions must precede all other actions.                                                                                                                                                   |
 | bundlePosition     | Number                   | A position in a bundle where a transaction is included, assigned by the sequencer.                                                                                                                                                                             |
 | sequencerTxIndex   | Number                   | A unique number assigned to a transaction by the sequencer, identifying its position in the global ledger before the addition of transactions submitted to Highlayer via Bitcoin.                                                                              |
 | trueTxIndex        | Number                   | A number assigned to a transaction after processing transactions submitted via Bitcoin, available only in responses from the Highlayerd node.                                                                                                                  |
@@ -32,11 +32,11 @@ Transactions on Highlayer are objects encoded using msgpack+base58, with the fol
 
 ## Action
 
-Highlayer is an action-based system where each action represents a small, atomic operation that performs a basic task—such as calling another contract, storing a key-value (KV) pair, or emitting an event. 
+Highlayer is an action-based system where each action represents a small, atomic operation that performs a basic task, such as calling another contract, storing a key-value (KV) pair, or emitting an event. 
 
 Transactions on Highlayer carry a list of actions, and contracts return lists of actions as well. All operations within Highlayer that write changes involve actions.
 
-If actions are returned from a smart contract, they must be in the form of an array of javascript objects. When actions are bundled in a transaction, they must be part of the transaction's msgpack-ed data, also represented as an array (list) of objects with the same fields."
+If actions are returned from a smart contract, they must be in the form of an array of javascript objects. When actions are bundled in a transaction, they must be part of the transaction's msgpack-ed data, also represented as an array (list) of objects with the same fields.
 
 Fields of each individual action are as follows:
 
