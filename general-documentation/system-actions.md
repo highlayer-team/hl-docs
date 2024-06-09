@@ -9,7 +9,7 @@ Smart contract calls are actions, writes to the system are actions.
 
 You can find action structure here - [Action](/general-documentation/common-data-types.md#action).
 
-Below you can find a comprehesive list of system actions.
+Below you can find a comprehensive list of system actions.
 
 ## allocateGas
 
@@ -49,7 +49,7 @@ Gas cost: `5000`, `10000` on top of it's address entry creation (address has nev
 
 ## uploadData
 
-Used to upload arbitrary data to highlayer. Also the way to upload smart contract sources.
+Used to upload arbitrary data to highlayer. It is also the way to upload smart contract sources.
 
 Params:
 | **Parameter name** | **Parameter data type** | **Description of parameter**                                                                   |
@@ -77,7 +77,7 @@ Params:
 | **Parameter name** | **Parameter data type**                      | **Description of parameter**                                                                                                                                                                 |
 |--------------------|----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | sourceId           | String                                       | ID of data stored on Highlayer (via [uploadData](#uploadData)) that will be used as contract's source                                                                                        |
-| initActions        | List([Action](/general-documentation/common-data-types.md#action)) | List of actions that deployed contract will execute right away after its creation. Usually used to configure contract's [KV](#kvStore) and perform other configuration/initialization steps. |
+| initActions        | List([Action](/general-documentation/common-data-types.md#action)) | List of actions that the deployed contract will execute right away after its creation. Usually used to configure contract's [KV](#kvStore) and perform other configuration/initialization steps. |
 | gasForInitActions  | String of digits                             | Gas allocated for deployment actions from `initActions` field.                                                                                                                               |
 
 Gas cost: `10000` + amount specified in `gasForInitActions` field.
