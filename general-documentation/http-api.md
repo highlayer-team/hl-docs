@@ -13,7 +13,7 @@ This section describes endpoints exposed by the highlayer sequencer. You can fin
 
 ### Fetch transaction by sequencer transaction index
 
-`GET` `/ledger/:sequencerTxIndex`
+`GET` `/ledger/$sequencerTxIndex`
 
 The sequencer assigns a unique number to each transaction it processes in incremental order (if index 2 exists, index 1 must exist too).
 
@@ -22,7 +22,7 @@ The sequencer assigns a unique number to each transaction it processes in increm
 
 ### Fetch available deposit on sequencer
 
-`GET` `/depositBalance/:address`
+`GET` `/depositBalance/$address`
 
 Fetch current balance on highlayer sequencer. 
 
@@ -73,3 +73,25 @@ Gives overview of network that highlayerd node is running.
 | **Key**         | **Value**        |
 |-----------------|------------------|
 |  network        |   (Name).(T/M/B for testnet, mainnet, betanet)/(version), i.e "Highlayer.T/0.4" |
+
+
+### Fetch account KV pair
+
+`GET` `/kv/$account:$key`
+
+Fetches [account's KV store](/general-documentation/system-actions.md#kvstore) value with provided key.
+
+
+<Badge type="info" text="Returns" /> 
+[Msgpack](https://msgpack.org/) representation of value.
+
+
+### Fetch data blob uploaded to highlayer
+
+`GET` `/data/$dataId`
+
+Fetches [data blob](/general-documentation/system-actions.md#uploaddata) with provided data ID.
+
+
+<Badge type="info" text="Returns" /> 
+octet-stream of raw bytes
