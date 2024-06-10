@@ -19,7 +19,7 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
-    sidebar: generateSidebar({excludeFilesByFrontmatterFieldName:"exclude", underscoreToSpace:true,capitalizeFirst:true, hyphenToSpace:true, capitalizeEachWords:true, useTitleFromFileHeading:true}),
+    sidebar: generateSidebar({excludeFilesByFrontmatterFieldName:"exclude", underscoreToSpace:true,capitalizeFirst:true, hyphenToSpace:true, useTitleFromFileHeading:true, }),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }

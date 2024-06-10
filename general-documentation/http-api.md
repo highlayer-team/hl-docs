@@ -49,6 +49,27 @@ Body must be [Transaction](/general-documentation/common-data-types#transaction)
 
 ### Fetch pricing per byte
 
-`GET` `/sequencer-prices`
+`GET` `/sequencerPrices`
 
 Fetches the price that the sequencer will charge per byte of uploaded transaction.
+
+<Badge type="info" text="Returns" /> 
+| **Key**         | **Value**        |
+|-----------------|------------------|
+|  feePerByte     |    [Alans](/general-documentation/common-data-types.md#alan) |
+
+
+## Highlayerd API
+
+This section describes endpoints exposed by the highlayer's highlayerd node. You can find public node endpoint in [magic values](/general-documentation/magic-values) or [host your own node](/Node-management/installation.md).
+
+### Fetch network/node info
+
+`GET` `/info`
+
+Gives overview of network that highlayerd node is running.
+
+<Badge type="info" text="Returns" /> 
+| **Key**         | **Value**        |
+|-----------------|------------------|
+|  network        |   (Name).(T/M/B for testnet, mainnet, betanet)/(version), i.e "Highlayer.T/0.4" |
