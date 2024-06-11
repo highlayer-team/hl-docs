@@ -24,7 +24,7 @@ This guide will use [Unisat](https://unisat.io/) for any wallet interactions.
 
 ## Getting $tHI
 
-To get some tBTC, obtain a Highlayer (or Bitcoin) wallet, and post your address in #faucet channel on our [discord server](https://discord.gg/skTbBz8H6S).
+To get some tHI, obtain a Highlayer (or Bitcoin) wallet, and post your address in #faucet channel on our [discord server](https://discord.gg/skTbBz8H6S).
 
 ## Extracting WIF private key
 
