@@ -95,3 +95,23 @@ Fetches [data blob](/general-documentation/system-actions.md#uploaddata) with pr
 
 <Badge type="info" text="Returns" /> 
 octet-stream of raw bytes
+
+### Fetch balance
+
+`GET` `/balance/$address`
+
+Fetches HI/tHI balance of an address. 
+
+<Badge type="info" text="Returns" /> 
+[Alans](/general-documentation/common-data-types.md#alan)
+
+### Fetch transaction
+
+`GET` `/tx/$id`
+
+Fetches raw, encoded transaction by txID (base64, msgpack-ed). Signed by the sequencer.
+
+<Badge type="info" text="Returns" /> 
+
+[Transaction](/general-documentation/common-data-types.md#transaction)
+
