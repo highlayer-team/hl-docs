@@ -6,6 +6,8 @@ Highlayer sequencer/node expose RESTful API for interacting with highlayer and r
 
 This document provides overview of exposed HTTP endpoints, also acting as a reference/standard for implementing custom nodes. 
 
+Please note that most of the structured values are returned in [Msgpack](https://msgpack.org) format unless explicitly specified otherwise.
+
 ## Sequencer API
 
 This section describes endpoints exposed by the highlayer sequencer. You can find sequencer endpoint in [magic values](/general-documentation/magic-values).
@@ -43,9 +45,10 @@ Required headers:
 
 | **Header name** | **Header value** |
 |-----------------|------------------|
-| Content-Type    | text/plain       |
+| Content-Type    | application/vnd.msgpack |
+| Content-Length  | Byte length of transaction |
 
-Body must be [Transaction](/general-documentation/common-data-types#transaction) in encoded form (base58 msgpack).
+Body must be [Transaction](/general-documentation/common-data-types#transaction) in encoded form with valid signature provided.
 
 ### Fetch pricing per byte
 
@@ -59,7 +62,7 @@ Fetches the price that the sequencer will charge per byte of uploaded transactio
 |  feePerByte     |    [Alans](/general-documentation/common-data-types.md#alan) |
 
 
-## Highlayerd API
+## Highlayerd node API
 
 This section describes endpoints exposed by the highlayer's highlayerd node. You can find public node endpoint in [magic values](/general-documentation/magic-values) or [host your own node](/Node-management/installation.md).
 
@@ -94,7 +97,7 @@ Fetches [data blob](/general-documentation/system-actions.md#uploaddata) with pr
 
 
 <Badge type="info" text="Returns" /> 
-octet-stream of raw bytes
+Binary
 
 ### Fetch balance
 
@@ -109,9 +112,26 @@ Fetches HI/tHI balance of an address.
 
 `GET` `/tx/$id`
 
-Fetches raw, encoded transaction by txID (base64, msgpack-ed). Signed by the sequencer.
+Fetches raw, encoded transaction by txID. Signed by the sequencer.
 
 <Badge type="info" text="Returns" /> 
 
 [Transaction](/general-documentation/common-data-types.md#transaction)
 
+`POST` `/calculateTxGas`
+
+Ask node to calculate gas for your transaction's actions (without gas consumed by smart contracts executed).
+
+Required headers: 
+
+| **Header name** | **Header value** |
+|-----------------|------------------|
+| Content-Type    | application/vnd.msgpack |
+| Content-Length  | Byte length of transaction |
+
+Body must be [Transaction](/general-documentation/common-data-types#transaction) in encoded form *WITHOUT* signature provided.
+
+<Badge type="info" text="Returns" /> 
+| **Key**         | **Value**        |
+|-----------------|------------------|
+|  gas       |   String of digits. Must be positive for transaction to be executed by network. |

@@ -16,7 +16,7 @@ Alans are usually represented as a string of digits ("100000000000000"). It is s
 
 ## Transaction
 
-Transactions on Highlayer are objects encoded using msgpack+base58, with the following fields:
+Transactions on Highlayer are objects encoded using msgpack, with the following fields:
 
 | **Field**          | **Format**               | **Description**                                                                                                                                                                                                                                                |
 |--------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -27,8 +27,8 @@ Transactions on Highlayer are objects encoded using msgpack+base58, with the fol
 | bundlePosition     | Number                   | A position in a bundle where a transaction is included, assigned by the sequencer.                                                                                                                                                                             |
 | sequencerTxIndex   | Number                   | A unique number assigned to a transaction by the sequencer, identifying its position in the global ledger before the addition of transactions submitted to Highlayer via Bitcoin.                                                                              |
 | trueTxIndex        | Number                   | A number assigned to a transaction after processing transactions submitted via Bitcoin, available only in responses from the Highlayerd node.                                                                                                                  |
-| parentBundleHash   | String (base58)          | Blake2 hash of the previous bundle that will serve as the parent for the current bundle (the bundle in which the transaction is included).                                                                                                                     |
-| sequencerSignature | String (base58)          | Base58-encoded Ed25519 sequencer signature of the transaction, with the fields `trueTxIndex` and `sequencerSignature` set to `null`. This can be verified against the Ed25519 public key listed in the [Magic Values](/general-documentation/magic-values) section.                  |   
+| parentBundleHash   | String (HEX)   | Blake2 hash of the previous bundle that will serve as the parent for the current bundle (the bundle in which the transaction is included).                                                                                                                     |
+| sequencerSignature | [Binary](https://github.com/msgpack/msgpack/blob/master/spec.md#bin-format-family)| Ed25519 sequencer signature of the transaction, with the fields `trueTxIndex` and `sequencerSignature` set to `null`. This can be verified against the Ed25519 public key listed in the [Magic Values](/general-documentation/magic-values) section.                  |   
 
 ## Action
 
