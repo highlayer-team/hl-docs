@@ -40,6 +40,21 @@ For Unisat, here is a series of screenshots that will help you extract the WIF k
 
 ![Extracting WIF from unisat](/assets/extracting-wif-3.png)
 
+## Installing development tools
+
+To be able to build/deploy highlayer contracts, you will need [Node.js](https://nodejs.org) installed.
+
+After you've installed node.js, you can install highlayer-cli - tooling to develop smart contracts on highlayer.
+
+To install highlayer-cli, run following command: 
+
+```sh
+npm install -g highlayer-cli
+```
+
+Use sudo if you're on linux machine.
+
+
 ## Next steps
 
-After you have your wallet set up, obtained some tHI in it, and extracted and saved the WIF, you can proceed to [Writing your first dApp: Cat rating app](/guide/cat-app)
+After you have your wallet set up, obtained some tHI in it, extracted and saved the WIF, and got highlayer-cli installed, you can proceed to [Writing your first dApp: Cat rating app](/guide/cat-app)
