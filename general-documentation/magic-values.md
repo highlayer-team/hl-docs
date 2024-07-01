@@ -1,13 +1,14 @@
 ---
 layout: doc
 ---
+
 # Magic values
 
 The values presented below are essential for the network, including sequencer parameters, p2p seeds, and public Highlayerd node hosted by Highlayer maintainers.
 
-Seed node: `seed-testnet.highlayer.io`
+Seed node: `https://seed-node.highlayer.io/`
 
-Sequencer URL: `https://sequencer-testnet.highlayer.io/`
+Sequencer URL: `https://sequencer.highlayer.io/`
 
 Public node: `https://node-1.highlayer.io/`
 
