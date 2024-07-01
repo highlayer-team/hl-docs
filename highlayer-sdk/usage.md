@@ -4,7 +4,7 @@ layout: doc
 
 # Installing highlayer-sdk
 
-The highlayer-sdk works 1:1 between Node and Browser envirements
+The highlayer-sdk works 1:1 between Node and Browser envirements (Hopefully)
 
 ## Node
 
@@ -60,20 +60,26 @@ const transaction = new highlayer.TransactionBuilder()
 # Uploading A Transaction
 
 ```js
-// First-ly you will need to create a signing client
+// Firstly you will need to create a signing client
 
 let SigningClient = new highlayer.SigningHighlayerClient({
 	sequencer: 'http://sequencer-testnet.highlayer.io/',
-	// Node Signing Function
-	signingFunction: function signer(data) {
-		return highlayer.bip322.Signer.sign(PRIVATE_KEY, ADDRESS, data);
-	},
+	// Node Signing Function using a private key
+	signingFunction: highlayer.PrivateKeySigner(PRIVATE_KEY, ADDRESS),
 	// Web Wallet Signing Function
+	// Should implement respective abstraction to whatever wallet
 	signingFunction: function signer(data) {
 		return Wallet.signData(data);
 	},
 });
 
+// Secondly you will create the transaction you want to upload, In this example we will do a sequencer deposit
+
+const transaction = new highlayer.TransactionBuilder()
+	.setAddress('ADDRESS') // Your address
+	.addActions([highlayer.Actions.sequencerDeposit({ amount: '1000000' })]); // Denominuated into 12. 1 $HI being "1000000000000"
+
+// Finaly broadcast the transaction
 let res = await SigningClient.signAndBroadcast(transaction);
 /*
 {
