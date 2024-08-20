@@ -77,7 +77,7 @@ Gives overview of network that highlayerd node is running.
 |-----------------|------------------|
 |  network        |   (Name).(T/M/B for testnet, mainnet, betanet)/(version), i.e "Highlayer.T/0.4" |
 
-
+Recommended cache level (for node operators): `1 second`
 ### Fetch account KV pair
 
 `GET` `/kv/$account:$key`
@@ -89,6 +89,8 @@ Fetches [account's KV store](/general-documentation/system-actions.md#kvstore) v
 [Msgpack](https://msgpack.org/) representation of value.
 
 
+Recommended cache level (for node operators): `10 seconds`
+
 ### Fetch data blob uploaded to highlayer
 
 `GET` `/data/$dataId`
@@ -99,6 +101,8 @@ Fetches [data blob](/general-documentation/system-actions.md#uploaddata) with pr
 <Badge type="info" text="Returns" /> 
 Binary
 
+Recommended cache level (for node operators): `Full`
+
 ### Fetch balance
 
 `GET` `/balance/$address`
@@ -107,6 +111,8 @@ Fetches HI/tHI balance of an address.
 
 <Badge type="info" text="Returns" /> 
 [Alans](/general-documentation/common-data-types.md#alan)
+
+Recommended cache level (for node operators): `10 seconds`
 
 ### Fetch transaction
 
@@ -117,6 +123,8 @@ Fetches raw, encoded transaction by txID. Signed by the sequencer.
 <Badge type="info" text="Returns" /> 
 
 [Transaction](/general-documentation/common-data-types.md#transaction)
+
+Recommended cache level (for node operators): `Full`
 
 `POST` `/calculateTxGas`
 
@@ -135,3 +143,5 @@ Body must be [Transaction](/general-documentation/common-data-types#transaction)
 | **Key**         | **Value**        |
 |-----------------|------------------|
 |  gas       |   String of digits. Must be positive for transaction to be executed by network. |
+
+Recommended cache level (for node operators): `None`
